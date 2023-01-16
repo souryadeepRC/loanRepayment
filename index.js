@@ -117,7 +117,7 @@ const renderLoanBreakup = (loanDetail) => {
 
 function generateDetails() { 
     const inputDetails = collectInput() 
-    console.log(inputDetails);
+    
     const emi = calculateEMI(inputDetails.Principal, inputDetails.Rate, inputDetails.Tenure)
 
     let result = []
@@ -152,8 +152,7 @@ function generateDetails() {
         prePaymentInfo = getPrePaymentInfo(prePaymentInfo, monthlyInfo.Month)
 
     }
-
-    console.log(result);
+ 
 
     renderLoanEndMsg(result[result.length-1])
     renderLoanBreakup(result) 
