@@ -91,6 +91,8 @@ const renderLoanBreakup = (loanDetail) => {
                     <th>Year</th>
                     <th>Principal Paid</th>
                     <th>Interest Paid</th>
+                    <th>Total Interest Paid</th>
+                    <th>Total Principal Paid</th>
                     <th>Principal Remaining</th>
                     <th>Principal Pre Payment</th>
                     <th>Pre Payment Monthly Savings</th>
@@ -98,13 +100,18 @@ const renderLoanBreakup = (loanDetail) => {
             </thead>
             <tbody>
     `
+    let totalPrincipalPaid = 0 ,totalInterestPaid = 0;
     loanDetail.forEach(info => {
+        totalInterestPaid += info.Interest_Paid;
+        totalPrincipalPaid += info.Principal_Paid;
         content +=`
         <tr>
             <td>${info.Month}</td>
             <td>${info.Year}</td>
             <td>${info.Principal_Paid}</td>
             <td>${info.Interest_Paid}</td>
+            <td>${Number(totalInterestPaid.toFixed(2))}</td>
+            <td>${Number(totalPrincipalPaid.toFixed(2))}</td>
             <td>${info.Next_Principal_Remaining}</td>
             <td>${info.PrePayment}</td>
             <td>${info.Monthly_Saving}</td>
