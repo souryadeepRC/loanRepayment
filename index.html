@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Re-Payment</title>
+    <link rel="icon" href="icon.png" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header class="bg-table fw-bold py-2 text-center text-light">Loan Re Payment Calculator</header>
+    <form action="" method="post" onsubmit="return false">
+        <div class="d-flex flex-wrap justify-content-evenly">
+            <div class="form-group">
+                <label for="LaonAmount">Loan Amount</label>
+                <input type="text" class="form-control" id="Amount" placeholder="Loan Amount" value="3000000" />
+            </div>
+            <div class="form-group">
+                <label for="Tenure">Tenure</label>
+                <input type="text" class="form-control" id="Tenure" placeholder="Tenure" value="25" />
+            </div>
+            <div class="form-group">
+                <label for="Rate">Interest Rate</label>
+                <input type="text" class="form-control" id="Rate" placeholder="Interest Rate" value="8.65" />
+            </div>
+
+            <div class="form-group">
+                <label for="PrePaymentAmount">Yearly Pre Payment Amount</label>
+                <input type="text" class="form-control" id="PrePaymentAmount" placeholder="Pre Payment Amount"
+                    value="200000" />
+            </div>
+            <div class="form-group">
+                <label for="PrePaymentIncrease">Pre Payment Increase Rate</label>
+                <input type="text" class="form-control" id="PrePaymentIncrease" placeholder="Pre Payment Increase"
+                    value="25" />
+            </div>
+
+            <div class="form-group">
+                <label for="StartPeriod">Loan Start Period</label>
+                <input type="month" class="form-control" id="StartPeriod" value="2023-04" />
+            </div>
+
+
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary w-25" onclick="generateDetails()">Calculate</button>
+        </div>
+    </form>
+    <div class="info-section d-flex justify-content-evenly">
+        <p class="lead text-center">EMI Per Month :: Rs.<strong id="EMI"></strong>/-</p>
+        <p class="lead text-center">Loan will be completed on <strong id="LoanEndPeriod"></strong></p>
+    </div>
+    <div id="LoanBreakup" class="scrollbar-default"></div>
+</body>
+
+</html>

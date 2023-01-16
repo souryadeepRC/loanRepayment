@@ -1,0 +1,140 @@
+/* .form-container{
+    display: flex;
+    flex-wrap: wrap;
+} */
+.form-group {
+    width: 30%;
+    padding: 10px;
+    margin: 0;
+}
+
+@media screen and (max-width:596px) {
+    .form-group {
+        width: 46%;
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        width: 75% !important;
+        padding: 3px;
+    }
+
+    .info-section {
+        flex-direction: column;
+    }
+
+    .info-section>p {
+        margin: 0;
+        font-size: 15px;
+    }
+}
+
+#LoanBreakup {
+    max-height: 20rem;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+
+.bg-table {
+    background-color: #2a4874 !important;
+}
+
+#LoanBreakup thead {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+
+@media only screen and (max-width: 596px)  {
+ 
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+ 
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td { 
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative; 
+        font-size: 12px; 
+        padding: 5px 0 5px 71% !important;
+    }
+
+    td:before { 
+        position: absolute; 
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /*
+	Label the data
+	*/
+    td:nth-of-type(1):before {
+        content: "Month";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Year";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Principal Paid";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Interest Paid";
+    }
+
+    td:nth-of-type(5):before {
+        content: "Principal Remaining";
+    }
+
+    td:nth-of-type(6):before {
+        content: "Principal Pre Payment";
+    }
+
+    td:nth-of-type(7):before {
+        content: "Pre Payment Monthly Savings";
+    }
+}
